@@ -1,6 +1,6 @@
 package com.igrejared.emprestaai.domain.enums;
 
-public enum MaintenanceStatusEnum {
+public enum MaintenanceStatus {
     SCHEDULED,
     IN_PROGRESS,
     COMPLETED,

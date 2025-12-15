@@ -1,6 +1,6 @@
 package com.igrejared.emprestaai.domain.enums;
 
-public enum RequestStatusEnum {
+public enum RequestStatus {
     PENDING,
     APPROVED,
     REJECTED,

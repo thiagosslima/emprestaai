@@ -1,6 +1,6 @@
 package com.igrejared.emprestaai.domain.enums;
 
-public enum EquipmentStatusEnum {
+public enum EquipmentStatus {
     AVAILABLE,
     LOANED,
     IN_MAINTENANCE,

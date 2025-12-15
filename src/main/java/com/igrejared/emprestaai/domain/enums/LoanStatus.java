@@ -1,6 +1,6 @@
 package com.igrejared.emprestaai.domain.enums;
 
-public enum LoanStatusEnum {
+public enum LoanStatus {
     OPEN,
     RETURNED,
     OVERDUE,

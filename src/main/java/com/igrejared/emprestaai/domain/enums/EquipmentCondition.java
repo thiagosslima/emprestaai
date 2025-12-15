@@ -1,6 +1,6 @@
 package com.igrejared.emprestaai.domain.enums;
 
-public enum EquipmentConditionEnum {
+public enum EquipmentCondition {
     NEW,
     GOOD,
     FAIR,
