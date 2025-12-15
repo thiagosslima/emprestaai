@@ -30,15 +30,15 @@ public class User {
         this.createdAt = LocalDateTime.now();
     }
 
-    public void update(UserId id, String fullName, String email, String phoneNumber) {
-        if (id == null || fullName == null || email == null || phoneNumber == null) {
+    public void update(User newUser) {
+        if (newUser == null) {
             throw new IllegalArgumentException("User fields cannot be null");
         }
 
-        this.id = id;
-        this.fullName = fullName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+        this.id = newUser.id;
+        this.fullName = newUser.fullName;
+        this.email = newUser.email;
+        this.phoneNumber = newUser.phoneNumber;
         this.updatedAt = LocalDateTime.now();
     }
 

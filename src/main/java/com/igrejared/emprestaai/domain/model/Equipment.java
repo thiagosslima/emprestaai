@@ -52,28 +52,24 @@ public class Equipment {
         this.category = category;
     }
 
-    public void update(String name, String description, String brand, String model, String serialNumber,
-                       Integer quantity, LocalDateTime acquisitionDate, EquipmentCondition condition,
-                       EquipmentStatus status, String storageLocation, BigDecimal replacementCost,
-                       String notes, Category category) {
-        if (name == null || quantity == null || condition == null || status == null ||
-                storageLocation == null || category == null) {
+    public void update(Equipment newEquipment) {
+        if (newEquipment == null) {
             throw new IllegalArgumentException("Equipment fields cannot be null");
         }
 
-        this.name = name;
-        this.description = description;
-        this.brand = brand;
-        this.model = model;
-        this.serialNumber = serialNumber;
-        this.quantity = quantity;
-        this.acquisitionDate = acquisitionDate;
-        this.condition = condition;
-        this.status = status;
-        this.storageLocation = storageLocation;
-        this.replacementCost = replacementCost;
-        this.notes = notes;
-        this.category = category;
+        this.name = newEquipment.name;
+        this.description = newEquipment.description;
+        this.brand = newEquipment.brand;
+        this.model = newEquipment.model;
+        this.serialNumber = newEquipment.serialNumber;
+        this.quantity = newEquipment.quantity;
+        this.acquisitionDate = newEquipment.acquisitionDate;
+        this.condition = newEquipment.condition;
+        this.status = newEquipment.status;
+        this.storageLocation = newEquipment.storageLocation;
+        this.replacementCost = newEquipment.replacementCost;
+        this.notes = newEquipment.notes;
+        this.category = newEquipment.category;
         this.updatedAt = LocalDateTime.now();
     }
 
