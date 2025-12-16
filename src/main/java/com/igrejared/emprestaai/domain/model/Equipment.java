@@ -6,7 +6,6 @@ import com.igrejared.emprestaai.domain.valueobject.EquipmentId;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class Equipment {
 
@@ -57,6 +56,7 @@ public class Equipment {
             throw new IllegalArgumentException("Equipment fields cannot be null");
         }
 
+        this.id = newEquipment.id;
         this.name = newEquipment.name;
         this.description = newEquipment.description;
         this.brand = newEquipment.brand;
