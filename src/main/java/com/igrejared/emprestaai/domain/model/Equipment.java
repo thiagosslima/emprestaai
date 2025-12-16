@@ -32,7 +32,7 @@ public class Equipment {
                      Integer quantity, LocalDateTime acquisitionDate, EquipmentCondition condition,
                      EquipmentStatus status, String storageLocation, BigDecimal replacementCost,
                      String notes, Category category) {
-        if (name == null || quantity == null || condition == null || status == null ||
+        if (name == null || quantity == null || condition == null ||
                 storageLocation == null || category == null) {
             throw new IllegalArgumentException("Equipment fields cannot be null");
         }
@@ -45,7 +45,7 @@ public class Equipment {
         this.quantity = quantity;
         this.acquisitionDate = acquisitionDate;
         this.condition = condition;
-        this.status = status;
+        this.status = status == null ? EquipmentStatus.AVAILABLE : status;
         this.storageLocation = storageLocation;
         this.replacementCost = replacementCost;
         this.notes = notes;
