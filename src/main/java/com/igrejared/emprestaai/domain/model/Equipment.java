@@ -3,10 +3,12 @@ package com.igrejared.emprestaai.domain.model;
 import com.igrejared.emprestaai.domain.enums.EquipmentCondition;
 import com.igrejared.emprestaai.domain.enums.EquipmentStatus;
 import com.igrejared.emprestaai.domain.valueobject.EquipmentId;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Getter
 public class Equipment {
 
     private EquipmentId id;

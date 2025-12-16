@@ -1,9 +1,12 @@
 package com.igrejared.emprestaai.domain.model;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Getter
 public class Request {
 
     private UUID id;
