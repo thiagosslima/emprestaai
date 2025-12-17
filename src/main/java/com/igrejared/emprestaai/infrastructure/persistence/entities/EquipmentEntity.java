@@ -3,19 +3,15 @@ package com.igrejared.emprestaai.infrastructure.persistence.entities;
 import com.igrejared.emprestaai.domain.enums.EquipmentCondition;
 import com.igrejared.emprestaai.domain.enums.EquipmentStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Getter
 @Entity
-@Table(name = "equipment")
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "equipments")
 public class EquipmentEntity {
 
     @Id
@@ -60,15 +56,23 @@ public class EquipmentEntity {
     @Column(name = "notes")
     private String notes;
 
-    @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @LastModifiedDate
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     private CategoryEntity category;
+
+    @PrePersist
+    public void prePersist() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
 }

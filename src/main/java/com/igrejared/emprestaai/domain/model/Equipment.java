@@ -7,6 +7,7 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 public class Equipment {
@@ -72,26 +73,30 @@ public class Equipment {
         this.replacementCost = newEquipment.replacementCost;
         this.notes = newEquipment.notes;
         this.category = newEquipment.category;
-        this.updatedAt = LocalDateTime.now();
+        updateAt();
     }
 
     public void markAsLoaned() {
         this.status = EquipmentStatus.LOANED;
-        this.updatedAt = LocalDateTime.now();
+        updateAt();
     }
 
     public void markAsInMaintenance() {
         this.status = EquipmentStatus.IN_MAINTENANCE;
-        this.updatedAt = LocalDateTime.now();
+        updateAt();
     }
 
     public void markAsReserved() {
         this.status = EquipmentStatus.RESERVED;
-        this.updatedAt = LocalDateTime.now();
+        updateAt();
     }
 
     public void markAsInactive() {
         this.status = EquipmentStatus.INACTIVE;
+        updateAt();
+    }
+
+    public void updateAt() {
         this.updatedAt = LocalDateTime.now();
     }
 }

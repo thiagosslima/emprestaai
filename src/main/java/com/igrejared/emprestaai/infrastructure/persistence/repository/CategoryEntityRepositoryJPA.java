@@ -8,8 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
-@Repository
 public interface CategoryEntityRepositoryJPA extends JpaRepository<CategoryEntity, UUID> {
-
     Page<CategoryEntity> findAll(Pageable pageable);
 }

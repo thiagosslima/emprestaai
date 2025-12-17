@@ -25,9 +25,9 @@ public class CategoryUseCase {
                 .toList();
     }
 
-    public void save(CategoryRequestDto dto) {
+    public String save(CategoryRequestDto dto) {
         var category = mapper.mapToDomain(dto);
-        this.repository.save(category);
+        return this.repository.save(category);
     }
 
     public void update(Long id, CategoryRequestDto dto) {

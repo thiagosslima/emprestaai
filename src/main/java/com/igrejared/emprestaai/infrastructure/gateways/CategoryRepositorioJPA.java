@@ -4,9 +4,11 @@ import com.igrejared.emprestaai.application.gateways.CategoryRepository;
 import com.igrejared.emprestaai.domain.mapper.CategoryMapper;
 import com.igrejared.emprestaai.domain.model.Category;
 import com.igrejared.emprestaai.infrastructure.persistence.repository.CategoryEntityRepositoryJPA;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class CategoryRepositorioJPA implements CategoryRepository {
 
     private final CategoryEntityRepositoryJPA repository;
@@ -25,8 +27,8 @@ public class CategoryRepositorioJPA implements CategoryRepository {
     }
 
     @Override
-    public void save(Category category) {
-        this.repository.save(mapper.mapToEntity(category));
+    public String save(Category category) {
+        return this.repository.save(mapper.mapToEntity(category)).getId().toString();
     }
 
     @Override

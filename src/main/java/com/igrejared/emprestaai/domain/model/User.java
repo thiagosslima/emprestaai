@@ -39,21 +39,25 @@ public class User {
         this.fullName = newUser.fullName;
         this.email = newUser.email;
         this.phoneNumber = newUser.phoneNumber;
-        this.updatedAt = LocalDateTime.now();
+        updateAt();
     }
 
     public void markAsInactive() {
         this.status = UserStatus.INACTIVE;
-        this.updatedAt = LocalDateTime.now();
+        updateAt();
     }
 
     public void markAsSuspended() {
         this.status = UserStatus.SUSPENDED;
-        this.updatedAt = LocalDateTime.now();
+        updateAt();
     }
 
     public void markAsDeleted() {
         this.status = UserStatus.DELETED;
+        updateAt();
+    }
+
+    public void updateAt() {
         this.updatedAt = LocalDateTime.now();
     }
 }

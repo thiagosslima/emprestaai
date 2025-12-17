@@ -5,6 +5,7 @@ import com.igrejared.emprestaai.domain.dtos.request.CategoryRequestDto;
 import com.igrejared.emprestaai.domain.dtos.response.CategoryResponseDto;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +29,9 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> saveCategory(
+    public ResponseEntity<String> saveCategory(
             @Valid @RequestBody CategoryRequestDto dto) {
-        return ResponseEntity.ok().build();
+        log.info("POST /categories - Category: {}", dto);
+        return new ResponseEntity<>(useCase.save(dto), HttpStatus.CREATED);
     }
 }
